@@ -106,9 +106,9 @@ Version: 1.0
   --black-color: #000;
   --title-color: #100C08;
   --text-color: #787878;
-  --primary-color1: #63AB45;
+  --primary-color1: #1E4C42;
   --primary-color1-opc: 99, 171, 69;
-  --primary-color2: #FBB03B;
+  --primary-color2: #BCAEA5;
   --primary-color2-opc: 251, 176, 59;
 }
 
@@ -700,6 +700,7 @@ ul {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  margin-top: 4em;
   white-space: nowrap;
 }
 .primary-btn1 svg {
@@ -2192,12 +2193,12 @@ header.style-1 .main-menu ul > li:hover i {
 header.style-1 .main-menu ul > li a {
   color: var(--title-color);
   display: block;
-  text-transform: uppercase;
+  text-transform: unset;
   letter-spacing: 0.4px;
   padding: 25px 15px;
   position: relative;
   font-family: var(--font-rubik);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 15px;
   transition: all 0.5s ease-out 0s;
   position: relative;
@@ -5402,10 +5403,11 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   background-position: center center;
   border-radius: 30px 30px 0 0;
   position: relative;
+  height: auto;
 }
 .home1-banner-area .home1-banner-wrapper .home1-banner-content {
-  text-align: center;
-  padding: 180px 0;
+  text-align: start;
+  padding: 10em 0;
   max-width: 860px;
   width: 100%;
   margin: 0 auto;
@@ -5495,12 +5497,13 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   .home1-banner-area .home1-banner-wrapper .home1-banner-content p {
     font-size: 15px;
     margin-bottom: 20px;
+    display: none;
   }
 }
 .home1-banner-area .home1-banner-wrapper .home1-banner-content .banner-content-bottom {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: 40px;
 }
 @media (max-width: 576px) {
@@ -5540,8 +5543,8 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 .home1-banner-area .slider-btn-grp .home1-banner-prev {
   position: absolute;
-  bottom: 145px;
-  left: 8%;
+  bottom: 40px;
+  left: 6%;
   z-index: 99;
 }
 @media (max-width: 767px) {
@@ -5551,8 +5554,8 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 }
 .home1-banner-area .slider-btn-grp .home1-banner-next {
   position: absolute;
-  bottom: 145px;
-  right: 8%;
+  bottom: 40px;
+  right: 6%;
   z-index: 99;
 }
 @media (max-width: 767px) {
@@ -8363,6 +8366,7 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
   .banner2-card.three .banner2-content-wrap .primary-btn1 {
     padding: 13px 25px;
     font-size: 15px;
+    margin-top: 2em;
   }
 }
 .banner2-card.three .banner2-content-wrap .primary-btn1::after {
@@ -29124,3 +29128,61 @@ header.style-3.four .nav-right .icon-list li:first-child svg {
 .tour-facilites-section .nav-tabs .nav-item .nav-link.active svg {
   fill: var(--primary-color1);
 }/*# sourceMappingURL=style.css.map */
+
+
+
+.fixed-booking-card .nav-link {
+  background-color: rgba(var(--primary-color1-opc), 0.1) !important;
+  width: 100%;
+  color: var(--primary-color1);
+  fill: var(--primary-color1);
+}
+
+.fixed-booking-card .nav-link svg {
+  fill: var(--primary-color1); width: 18px; height: 18px;
+}
+
+.fixed-booking-card .nav-item .active {
+  background-color: var(--primary-color1) !important;
+  width: 100%;
+  color: white;
+  fill: white;
+}
+
+.fixed-booking-card .nav-item .active svg {
+  fill: white; width: 18px; height: 18px;
+}
+
+#pills-tab2Content #form-transfer input {
+  padding: 4px 12px 4px 40px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: #ffffff82;
+}
+
+#pills-tab2Content #transfer-from {
+  background-image: url("data:image/svg+xml;utf8,<svg width='16px' height= '16px' style='opacity: .8;' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path d='M.3 166.9L0 68C0 57.7 9.5 50.1 19.5 52.3l35.6 7.9c10.6 2.3 19.2 9.9 23 20L96 128l127.3 37.6L181.8 20.4C178.9 10.2 186.6 0 197.2 0l40.1 0c11.6 0 22.2 6.2 27.9 16.3l109 193.8 107.2 31.7c15.9 4.7 30.8 12.5 43.7 22.8l34.4 27.6c24 19.2 18.1 57.3-10.7 68.2c-41.2 15.6-86.2 18.1-128.8 7L121.7 289.8c-11.1-2.9-21.2-8.7-29.3-16.9L9.5 189.4c-5.9-6-9.3-14.1-9.3-22.5zM32 448l576 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32zm96-80a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm128-16a32 32 0 1 1 0 64 32 32 0 1 1 0-64z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  background-size: 20px 20px;
+}
+
+#pills-tab2Content #form-transfer .input-icon {
+  width: 100%;
+  padding: 4px 12px 4px 12px;
+}
+
+#pills-tab2Content #transfer-to {
+  background-image: url("data:image/svg+xml;utf8,<svg width='16px' height= '16px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'><path d='M16 144a144 144 0 1 1 288 0A144 144 0 1 1 16 144zM160 80c8.8 0 16-7.2 16-16s-7.2-16-16-16c-53 0-96 43-96 96c0 8.8 7.2 16 16 16s16-7.2 16-16c0-35.3 28.7-64 64-64zM128 480l0-162.9c10.4 1.9 21.1 2.9 32 2.9s21.6-1 32-2.9L192 480c0 17.7-14.3 32-32 32s-32-14.3-32-32z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+  background-size: 16px 16px;
+}
+
+button.btn-submit {
+  padding: 6px;
+  margin-top: .5em;
+  background-color: var(--primary-color1) !important;
+  color: white;
+  border-radius: 13px;
+}
