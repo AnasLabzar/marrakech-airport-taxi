@@ -1,5 +1,8 @@
 <?php
 // Sample dynamic data for slides
+error_reporting(0); // Disable all PHP errors
+ini_set('display_errors', 0); // Turn off error display
+
 $slides = [
     [
         "image" => "assets/img/home1/home1-banner-img1.jpg",
@@ -97,37 +100,43 @@ $slides = [
                         <h4 style="color: var(--primary-color1);">Book your transfer</h4>
                         <span style="font-size: 14px; position: relative; bottom: 1em; opacity: .8;">Please fill all
                             fields</span>
-                        <form id="transfer-form">
-                            <label for="transfer-from">From:</label>
+                        <form id="transfer-form" action="checkout.php" method="POST">
+                            <label for="transfer-from">From *:</label>
                             <input type="text" id="transfer-from" name="transfer-from" autocomplete="off"
                                 value="Marrakech Menara Airport (RAK)" />
-                            <label for="transfer-to">To:</label>
+
+                            <label for="transfer-to">To *:</label>
                             <input type="text" id="transfer-to" name="transfer-to" autocomplete="off"
                                 value="Jemaa el-Fna, Marrakesh, Morocco" />
+
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <label for="transfer-date">Date:</label>
+                                    <label for="transfer-date">Date *:</label>
                                     <input class="input-icon" type="date" id="dateArrival" name="dateArrival">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <label for="transfer-time">Time:</label>
+                                    <label for="transfer-time">Time *:</label>
                                     <input class="input-icon" type="time" id="timeArrival" name="timeArrival">
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
-                                    <label for="transfer-date">Passengers:</label>
+                                    <label for="transfer-passengers">Passengers *:</label>
                                     <input class="input-icon" type="number" value="1" min="0" max="50" id="passengers"
                                         name="passengers">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <label for="transfer-time">Luggage:</label>
-                                    <input class="input-icon" type="number" value="1" min="0" max="10" id="luggage"
-                                        name="luggage">
+                                    <label for="transfer-luggage">Flight Number:</label>
+                                    <input class="input-icon" type="text" value="AT818" placeholder="Ex: AT010" id="flight-number"
+                                        name="flight-number">
                                 </div>
                             </div>
+
                             <button class="btn-submit" type="submit">Book now</button>
                         </form>
+                        <button></button>
+
                     </div>
                 </div>
                 <div class="tab-pane fade" id="tour" role="tabpanel">
@@ -199,3 +208,4 @@ $slides = [
         }
     }
 </style>
+
