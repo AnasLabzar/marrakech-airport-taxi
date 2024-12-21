@@ -1,0 +1,43 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect to HTTPS (optional, if your site supports HTTPS)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Set the default index file
+DirectoryIndex index.php
+
+# Redirect non-www to www (optional, if desired)
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle clean URLs (rewrite all requests to index.php)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+# Custom error pages (optional)
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+
+# Prevent directory listing
+Options -Indexes
+
+# Set caching headers (optional, for performance)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 day"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType text/javascript "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "\.(htaccess|htpasswd|env|ini|log|sh|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
